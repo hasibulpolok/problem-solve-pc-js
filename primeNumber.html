@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Grade System</title>
+    <title>Prime Number Check</title>
 </head>
 <body>
 
 <script>
-let marks = parseFloat(prompt("Enter your percentage:"));
-let grade;
+let num = parseInt(prompt("Enter a number to check Prime:"));
+let isPrime = true;
 
-if (marks >= 80) {
-    grade = "A+";
-} 
-else if (marks >= 70) {
-    grade = "A";
-} 
-else if (marks >= 60) {
-    grade = "AB";
-} 
-else {
-    grade = "Fail";
+if (num <= 1) {
+    isPrime = false;
+} else {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
 }
 
-document.write("<h2>Your Grade is: " + grade + "</h2>");
+if (isPrime) {
+    document.write("<h2>" + num + " is a Prime Number</h2>");
+} else {
+    document.write("<h2>" + num + " is NOT a Prime Number</h2>");
+}
 </script>
 
 </body>
