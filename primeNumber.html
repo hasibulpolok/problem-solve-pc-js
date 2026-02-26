@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Prime Number Check</title>
+</head>
 <body>
 
 <script>
-let num = parseInt(prompt("Enter a number:"));
+let num = parseInt(prompt("Enter a number to check Prime:"));
 let isPrime = true;
 
 if (num <= 1) {
@@ -18,9 +21,9 @@ if (num <= 1) {
 }
 
 if (isPrime) {
-    alert(num + " is a Prime Number");
+    document.write("<h2>" + num + " is a Prime Number</h2>");
 } else {
-    alert(num + " is Not a Prime Number");
+    document.write("<h2>" + num + " is NOT a Prime Number</h2>");
 }
 </script>
 
