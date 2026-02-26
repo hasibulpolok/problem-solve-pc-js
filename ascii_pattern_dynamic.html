@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASCII Pattern - Full Alphabet</title>
+    <style>
+        body { font-family: monospace; white-space: pre; }
+    </style>
+</head>
+<body>
+
+<script>
+let n = 7;
+
+const letters = {
+    'A': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if ((j == 0 && i != 0) || (j == n-1 && i != 0) || (i == 0 && j > 0 && j < n-1) || (i == Math.floor(n/2))) {
+                line += "*";
+            } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'B': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || (i == 0 && j < n-1) || (i == Math.floor(n/2) && j < n-1) || (i == n-1 && j < n-1) || (j == n-1 && i != 0 && i != Math.floor(n/2) && i != n-1)) {
+                line += "*";
+            } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'C': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || i == 0 || i == n-1) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'D': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || (j == n-1 && i != 0 && i != n-1) || (i == 0 && j < n-1) || (i == n-1 && j < n-1)) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'E': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || i == 0 || i == Math.floor(n/2) || i == n-1) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'F': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || i == 0 || i == Math.floor(n/2)) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'G': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || i == 0 || i == n-1 || (j == n-1 && i >= Math.floor(n/2)) || (i == Math.floor(n/2) && j >= Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'H': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || j == n-1 || i == Math.floor(n/2)) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'I': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (i == 0 || i == n-1 || j == Math.floor(n/2)) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'J': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (i == 0 || j == Math.floor(n/2) || (i == n-1 && j < Math.floor(n/2)) || (j == 0 && i >= Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'K': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || (i + j == Math.floor(n/2)) || (i - j == Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'L': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || i == n-1) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'M': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || j == n-1 || (i == j && j <= Math.floor(n/2)) || (i + j == n-1 && j >= Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'N': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || j == n-1 || i == j) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'O': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if ((i == 0 && j > 0 && j < n-1) || (i == n-1 && j > 0 && j < n-1) || j == 0 || j == n-1) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'P': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || (i == 0 && j < n-1) || (i == Math.floor(n/2) && j < n-1) || (j == n-1 && i < Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'Q': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if ((i == 0 && j > 0 && j < n-1) || (i == n-1 && j > 0 && j < n-2) || j == 0 || j == n-1 || (i == j && i >= Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'R': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || (i == 0 && j < n-1) || (i == Math.floor(n/2) && j < n-1) || (j == n-1 && i < Math.floor(n/2)) || (i - j == Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'S': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if ((i == 0 && j > 0) || (i == Math.floor(n/2) && j < n-1) || (i == n-1 && j < n-1) || (j == 0 && i < Math.floor(n/2)) || (j == n-1 && i > Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'T': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (i == 0 || j == Math.floor(n/2)) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'U': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if ((j == 0 && i != n-1) || (j == n-1 && i != n-1) || (i == n-1 && j > 0 && j < n-1)) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'V': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if ((j == i && i < Math.floor(n/2)) || (j == n - i - 1 && i < Math.floor(n/2)) || (i >= Math.floor(n/2) && j == Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'W': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (j == 0 || j == n-1 || (i == j && i >= Math.floor(n/2)) || (i + j == n - 1 && i >= Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'X': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (i == j || i + j == n - 1) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'Y': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if ((j == i && i < Math.floor(n/2)) || (j == n - i - 1 && i < Math.floor(n/2)) || (j == Math.floor(n/2) && i >= Math.floor(n/2))) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    },
+    'Z': function(i) {
+        let line = "";
+        for(let j=0; j<n; j++) {
+            if (i == 0 || i == n-1 || i + j == n - 1) { line += "*"; } else { line += " "; }
+        }
+        return line + "  ";
+    }
+};
+
+let name = prompt("Enter your name (Capital letters only):");
+name = name.toUpperCase();
+
+for(let i=0; i<n; i++) {
+    let line = "";
+    for(let ch of name) {
+        if(letters[ch]) { line += letters[ch](i); }
+        else { line += " ".repeat(n + 2); }
+    }
+    document.write(line + "\n");
+}
+</script>
+
+</body>
+</html>
