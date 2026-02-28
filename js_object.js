@@ -1,12 +1,12 @@
-// const user = {
-//   name: "Polok",
-//   greet: function () {
-//     // return(`My name is ${this.name}`);
-//     console.log(`My name is ${this.name}`)
-//   }
-// };
+const user = {
+  name: "Polok",
+  greet: function () {
+    // return(`My name is ${this.name}`);
+    console.log(`My name is ${this.name}`)
+  }
+};
 
-// user.greet();
+user.greet();
 
 const user2 = {
     name:"Ridu",
