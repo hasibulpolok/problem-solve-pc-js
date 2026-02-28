@@ -17,3 +17,12 @@ const user2 = {
 }
 
 user2.ridu();
+
+function Person(f,l,fn){
+this.firstName = f;
+this.tName = l;
+this.fullName = fn;
+}
+
+let fuck = new Person("Redoy","Hossain","Ridoy Hossain");
+console.log(sname.firstName, sname.tName, sname.fullName)
