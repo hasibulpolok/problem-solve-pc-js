@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme to find factorial</title>
+</head>
+<body>
+<script>
+let number = parseInt(prompt("Enter a number to find its factorial"));
+
+let factorial = 1;
+let expression = "";
+
+
+for (let i = 1; i <= number; i++) {
+    factorial = factorial * i;
+}
+
+
+for (let i = number; i >= 1; i--) {
+    expression += i;
+    if (i > 1) {
+        expression += " × ";
+    }
+}
+
+
+document.write(`The factorial of number ${number} is = ${factorial} <br> <br>`);
+document.write(`<code>${number}! = ${expression} = ${factorial} <code>`);
+</script>
+</body>
+</html>
