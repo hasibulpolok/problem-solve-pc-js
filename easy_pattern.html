@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy_pattern</title>
 </head>
+
 <body>
     <script>
-        document.write("*<br>"); 
-        document.write("**<br>"); 
-        document.write("***<br>"); 
-        document.write("****<br>"); 
-        document.write("*****<br>"); 
-        document.write("******<br>"); 
-        document.write("*******<br>"); 
-        document.write("********<br>"); 
+        // document.write("*<br>"); 
+        // document.write("**<br>"); 
+        // document.write("***<br>"); 
+        // document.write("****<br>"); 
+        // document.write("*****<br>"); 
+        // document.write("******<br>"); 
+        // document.write("*******<br>"); 
+        // document.write("********<br>"); 
+
+        function rightTriangle(rows) {
+            for (let i = 1; i <= rows; i++) {
+                document.write('*'.repeat(i) + "<br>");
+            }
+        }
+
+        rightTriangle(20);
     </script>
 
 
-    
+
 </body>
+
 </html>
