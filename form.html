@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Data Show</title>
+  <style>
+    
+    .box { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+  <h2>Data Form</h2>
+
+  <form id="userForm">
+    <input type="text" id="name" placeholder="Enter Name" required><br><br>
+    <input type="email" id="email" placeholder="Enter Email" required><br><br>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <div id="output" class="box"></div>
+
+<script>
+  const form = document.getElementById("userForm");
+  const output = document.getElementById("output");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+   
+
+    output.innerHTML = `
+      <h3>Submitted Data:</h3>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+    `;
+
+
+  });
+</script>
+
+</body>
+</html>
