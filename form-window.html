@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Form Data Show</title>
   <style>
-  
     input {
       padding: 8px;
       width: 250px;
@@ -16,6 +16,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <h2>Data Form</h2>
@@ -56,11 +57,16 @@
       const emailPara = popup.document.createElement("p");
       emailPara.innerHTML = "<strong>Email:</strong> " + email;
 
+       const footer = popup.document.createElement("p");
+      footer.textContent = "@ all reserved by Hasibul Polok";
+
       body.appendChild(heading);
       body.appendChild(namePara);
       body.appendChild(emailPara);
+      body.appendChild(footer)
     });
   </script>
 
 </body>
+
 </html>

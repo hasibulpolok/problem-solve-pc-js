@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Popup Example</title>
+</head>
+
+<body>
+
+<h3>Gender</h3>
+<input type="radio" name="gender" id="male" value="Male"> Male
+<input type="radio" name="gender" id="female" value="Female"> Female
+
+
+<h3>Education</h3>
+<input type="checkbox" class="edu" value="SSC"> SSC
+<input type="checkbox" class="edu" value="HSC"> HSC
+<input type="checkbox" class="edu" value="Diploma"> Diploma
+
+
+<h3>Course</h3>
+<select id="course">
+<option value="">Select Course</option>
+<option value="CSE">CSE</option>
+<option value="EEE">EEE</option>
+<option value="BBA">BBA</option>
+</select>
+
+<br><br>
+<button onclick="showData()">Submit</button>
+
+
+<script>
+
+function showData(){
+
+let gender = document.querySelector('input[name="gender"]:checked');
+
+if(!gender){
+alert("Please select gender");
+return;
+}
+
+let education = document.getElementsByClassName("edu");
+
+let eduList = "";
+
+for(let i=0;i<education.length;i++){
+
+if(education[i].checked){
+eduList += education[i].value + "<br>";
+}
+
+}
+
+if(eduList==""){
+alert("Select at least one education");
+return;
+}
+
+
+let course = document.getElementById("course").value;
+
+if(course==""){
+alert("Please select course");
+return;
+}
+
+
+let win = window.open("","popup","width=400,height=400");
+
+win.document.write("<h2>User Information</h2>");
+win.document.write("Gender: " + gender.value + "<br><br>");
+win.document.write("Education:<br>" + eduList + "<br>");
+win.document.write("Course: " + course);
+
+}
+
+</script>
+
+</body>
+</html>
